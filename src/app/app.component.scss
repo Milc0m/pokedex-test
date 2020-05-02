@@ -1,0 +1,57 @@
+.logo {
+    text-align: center;
+    font-size: 50px;
+}
+
+.myButton {
+    height: 100px;
+    padding: 0;
+
+}
+
+.myTable {
+    height: 225px;
+}
+
+.pokemon-name {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.abbility {
+    display: inline-flex;
+    width: auto;
+    height: auto;
+
+    .inline-block {
+      margin-right: 4px;
+      padding: 0 5px;
+      border-radius: 3px;
+      text-transform: capitalize;
+    }    
+
+    #poison {
+      background-color: chartreuse;
+    }
+
+    #grass {
+      background-color: forestgreen;
+    }
+
+    #fire {
+      background-color: crimson;
+    }
+
+    #flying {
+      background-color: rgb(171, 248, 248);
+    }
+
+    #water {
+      background-color: rgb(59, 59, 194);
+    }
+
+    #bug {
+      background-color: burlywood;
+    }
+}
+
