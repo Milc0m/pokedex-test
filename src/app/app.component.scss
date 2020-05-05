@@ -6,11 +6,16 @@
 .myButton {
     height: 100px;
     padding: 0;
-
+    transition: all .2s ease-in-out;
+    &:hover {
+       border-width: medium;
+       border-style: double;
+    }
 }
 
 .myTable {
-    height: 225px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .pokemon-name {
@@ -53,5 +58,91 @@
     #bug {
       background-color: burlywood;
     }
+
+    #normal {
+      background-color: gray;
+    }
+
+    #electric {
+      background-color: yellow;
+    }
+
+    #fairy {
+      background-color: deeppink;
+    }
+
+    #ground {
+      background-color: peru;
+    }
+
+    #fighting {
+      background-color: rgb(148, 100, 237);
+    }
+
+    #psychic {
+      background-color: mediumaquamarine;
+    }
+
+    #steel {
+      background-color: slategray;
+    }
+
+    #rock {
+      background-color: peachpuff;
+    }
+
+    #ice {
+      background-color: dodgerblue;
+    }
+
+    #ghost {
+      background-color: lightgray;
+    }
 }
 
+.my-button {
+  width: 80%;
+  text-transform: none;
+  font-size: 30px;
+  border-radius: 6px;
+  background-color: rgb(8, 139, 247);
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+}
+
+.searchField {
+  width: 80% !important;
+}
+
+.selected-tabale {
+  border-width: thin;
+  width: 200px;
+  border-style: double;
+  margin-bottom: 20px;
+  
+ 
+  td {
+    text-align: center;
+    padding: 0;
+    border: medium;
+    width: fit-content;
+    border-right: double;
+  }
+  
+}
+
+.selectedOne {
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+.selectedImg {
+  margin-left: 50px;
+}
+
+.detailSection {
+  margin-top: 120px;
+}

@@ -1,18 +1,67 @@
 <h1 class="logo">Pokedex</h1>
 
 <div class="row">
-  <div class="col s12 m8 l8" >
-    <div class="col s12 m6 l4 myTable" *ngFor="let pokemon of data">
-      <a class="waves-effect waves-teal btn-flat myButton">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" alt="">
+  <div class="col s12 m8 l8">
+    <input type="text" class="searchField" placeholder="Search pokemon type" [(ngModel)]="search">
+    <div class="col s12 m6 l4 myTable" *ngFor="let pokemon of pokemonList | filter:search">
+      <a class="waves-effect waves-teal btn-flat myButton" (click)="selectPokemon(pokemon)">
+        <img [src]="pokemon.sprites.front_default">
       </a>
         <div class="pokemon-name">{{pokemon.name}}</div>
         <div class="abbility">
-          <div class="inline-block" id="{{type.type.name }}" *ngFor="let type of pokemon.types"> {{type.type.name }}</div>
+          <div class="inline-block" id="{{type.type.name}}" *ngFor="let type of pokemon.types"> {{type.type.name}}</div>
         </div>
-      
-      <p></p>
     </div>
   </div>
-  <div class="col s12 m4 l4"><p>s12 m4</p></div>
+  <div class="col s12 m4 l4">
+    <div class="detailSection" *ngIf="selectedPokemon">
+      <img class="selectedImg" [src]="selectedPokemon.ImageUrl">
+      <div class="pokemon-name selectedOne">{{selectedPokemon.Name}} #{{selectedPokemon.Id}}</div>
+      <table class="selected-tabale">
+        <tbody>
+          <tr>
+            <td>Type</td>
+            <td>
+              <div *ngFor="let type of selectedPokemon.Type">{{type.type.name}}</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Attack</td>
+            <td>{{selectedPokemon.Attack}}</td>
+          </tr>
+          <tr>
+            <td>Defence</td>
+            <td>{{selectedPokemon.Defens}}</td>
+          </tr>
+          <tr>
+            <td>HP</td>
+            <td>{{selectedPokemon.HP}}</td>
+          </tr>
+          <tr>
+            <td>SP Attack</td>
+            <td>{{selectedPokemon.SPAttack}}</td>
+          </tr>
+          <tr>
+            <td>SP Defence</td>
+            <td>{{selectedPokemon.SPDefens}}</td>
+          </tr>
+          <tr>
+            <td>Speed</td>
+            <td>{{selectedPokemon.Speed}}</td>
+          </tr>
+          <tr>
+            <td>Weight</td>
+            <td>{{selectedPokemon.Weight}}</td>
+          </tr>
+          <tr>
+            <td>Total moves</td>
+            <td>{{selectedPokemon.Moves}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col s12 m8 l8">
+    <a class="waves-effect my-button btn-large" (click)="loadMorePokemon()">Load More</a>
+  </div>
 </div>
